@@ -8,7 +8,7 @@
   <title>Approach | Verifiable AI Consensus | K MEANS AI</title>
   <meta
     name="description"
-    content="K MEANS AI approach to building verifiable multi-model reasoning systems, neutral arbiters, shared reasoning context, and enterprise-grade consensus infrastructure."
+    content="A practical approach to accountable AI: evaluate alignment, challenge assumptions, preserve evidence, and combine governed model consensus with human oversight."
   />
   <meta name="theme-color" content="#f7f7f5" />
   <link rel="canonical" href="https://kmeans.ai/approach.html" />
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="K MEANS AI" />
   <meta property="og:title" content="Approach | Verifiable AI Consensus | K MEANS AI" />
-  <meta property="og:description" content="A disciplined approach to verifiable multi-model reasoning, neutral arbitration, and shared reasoning context." />
+  <meta property="og:description" content="Evaluate alignment, challenge assumptions, and preserve evidence through governed multi-model reasoning and human oversight." />
   <meta property="og:url" content="https://kmeans.ai/approach.html" />
   <meta property="og:image" content="https://kmeans.ai/assets/images/kmeans-social-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -72,9 +72,9 @@
         <p class="eyebrow">Approach</p>
         <h1 id="approach-title">From many voices to one defensible answer.</h1>
         <p>
-          K MEANS AI builds consensus infrastructure around a disciplined loop: deliberate in shared context, preserve the
-          evidence needed for review, arbitrate, score, and refine. The result is a system where model diversity becomes a
-          reliability asset rather than a louder collection of disconnected answers.
+          K MEANS AI builds consensus infrastructure around a disciplined loop: define the task and its boundaries,
+          challenge assumptions, integrate responses, and preserve evidence for review. Alignment requires ongoing
+          evaluation of that process, especially when models, instructions, or operating conditions change.
         </p>
       </div>
       <div class="page-hero-art page-hero-sketch hero-art-approach" aria-hidden="true">
@@ -94,10 +94,11 @@
         <article class="capability-item">
           <span>01</span>
           <div>
-            <h3>Determine user intent</h3>
+            <h3>Define intent and boundaries</h3>
             <p>
-              The system starts by deciding whether the task needs adversarial scrutiny, collaborative synthesis, or a
-              hybrid mode. This prevents every prompt from being treated as a generic completion request.
+              Start with the intended outcome, authorized scope, and conditions that require stopping or human review.
+              Choose adversarial scrutiny, collaborative synthesis, or independent comparison to fit the risk. A model’s
+              interpretation of the task must not grant it additional authority.
             </p>
           </div>
         </article>
@@ -128,8 +129,9 @@
           <div>
             <h3>Arbitrate and integrate</h3>
             <p>
-              A neutral arbiter distills facts, inferences, and uncertainties into a unified representation. The arbiter
-              sits outside the debate so the final answer is not simply whichever model argued most fluently.
+              A designated integrator distills facts, inferences, and uncertainties into a unified response. Keep
+              unresolved objections visible for review. The integrator is also a model, and its assessment needs
+              validation against evidence and the standards set for the task.
             </p>
           </div>
         </article>
@@ -138,8 +140,9 @@
           <div>
             <h3>Score confidence</h3>
             <p>
-              Confidence is assigned from convergence, disagreement, and reasoning quality. The system should be able to
-              say not only what it believes, but why that belief is stable or why it remains uncertain.
+              Assess convergence, disagreement, and reasoning quality, then examine the result against human-reviewed
+              expectations. Model-generated confidence supports triage; agreement alone does not establish correctness,
+              alignment, or authorization for a downstream action.
             </p>
           </div>
         </article>
@@ -190,8 +193,9 @@
           <div>
             <h3>Score and stop when consensus is weak</h3>
             <p>
-              Confidence signals and confirmation standards help distinguish strong consensus from uncertainty, including
-              workflows where insufficient alignment should stop rather than masquerade as a reliable answer.
+              One-Shot Confirmation stops results the integrator marks low-confidence when assessing the configured
+              consensus threshold. This makes weak agreement visible. Passing that check still requires application-specific
+              validation and any human approval needed before consequential action.
             </p>
           </div>
         </article>
@@ -200,8 +204,9 @@
           <div>
             <h3>Review runtime behavior</h3>
             <p>
-              Status, trace availability, governed boundaries, review tools, and configuration history give teams a controlled
-              way to inspect behavior after processing.
+              Status, permitted traces, and configuration history help teams inspect behavior after processing and compare
+              evaluation runs over time. When investigating an incident, corroborate model statements with separately
+              collected application and security logs.
             </p>
           </div>
         </article>
@@ -244,21 +249,35 @@
           <span>REPLAY</span>
           <div>
             <h3>Reproducibility</h3>
-            <p>Reasoning sessions should be replayable enough for review, audit, and improvement. A final answer without a reasoning trail is not infrastructure.</p>
+            <p>Record enough permitted configuration and context to repeat an evaluation and investigate differences. Metadata-only records do not reconstruct full prompts or responses, and repeated model calls can produce different results.</p>
           </div>
         </article>
         <article class="capability-item">
           <span>ALIGN</span>
           <div>
-            <h3>Domain alignment</h3>
-            <p>High-stakes environments need specialized expert models and arbiters that reflect the vocabulary, constraints, and risk profile of the domain.</p>
+            <h3>Alignment under pressure</h3>
+            <p>Test respect for scope, authorization, and uncertainty through ambiguous instructions, adversarial inputs, and tasks without a safe solution. Re-evaluate when models or policies change.</p>
           </div>
         </article>
         <article class="capability-item">
           <span>CONTROL</span>
           <div>
             <h3>Human control</h3>
-            <p>The system should clarify decisions, not conceal them. Users need visibility into uncertainty, disagreement, and the assumptions behind convergence.</p>
+            <p>Give reviewers visibility into disagreement and assumptions. Keep approval for consequential actions in the surrounding workflow, with clearly assigned human responsibility and enforceable limits on tool access.</p>
+          </div>
+        </article>
+        <article class="capability-item">
+          <span>SCOPE</span>
+          <div>
+            <h3>Layered security</h3>
+            <p>Pair reasoning oversight with least-privilege credentials, network isolation, and monitoring outside model control. Parallax™ tenant policies govern its workflows; they do not replace sandboxing or secure downstream systems.</p>
+          </div>
+        </article>
+        <article class="capability-item">
+          <span>CHECK</span>
+          <div>
+            <h3>Agreement with evidence</h3>
+            <p>Compare independent responses as well as shared-context deliberation. Test for correlated errors, persuasion, and misplaced confidence; a unanimous result can still be wrong or unsafe.</p>
           </div>
         </article>
       </div>
