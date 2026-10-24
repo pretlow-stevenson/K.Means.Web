@@ -1014,7 +1014,8 @@ sup {
 
 @media (max-width: 560px) {
   .site-header {
-    position: static;
+    /* Preserve z-index above animated content without making the mobile header sticky. */
+    position: relative;
     gap: 8px;
     padding-top: 14px;
     padding-bottom: 12px;
