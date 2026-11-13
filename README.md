@@ -10,6 +10,7 @@ The public K MEANS AI site is a dependency-free static website published through
 - `assets/css/home.css` contains home-page layout and the soccer easter egg presentation.
 - `assets/css/pages.css` contains the shared layout system for interior pages.
 - `assets/js/site-motion.js` contains shared navigation and progressive, reduced-motion-aware page animation behavior.
+- `assets/js/evidence-pages.js` and `assets/css/evidence.css` paginate the research evidence brief without changing the shared page layout.
 - `assets/js/home-soccer.js` conditionally loads the one-time home-page soccer flourish when the visitor is eligible to see it.
 - `assets/js/vendor/` contains the pinned Matter.js runtime and its license; it is loaded only for that optional flourish.
 
@@ -32,6 +33,12 @@ node scripts/audit-site.mjs
 ```
 
 The audit verifies local links and fragments, responsive image references and intrinsic dimensions, heading and ARIA targets, canonical and social metadata, structured data, external-link safety, sitemap routes, and image file signatures.
+
+## Updating the Evidence Brief
+
+Keep incident summaries and primary-source links in `research.html`. Each `data-evidence-page` section holds two briefs; add new groups above older groups and update the numbered navigation and its descriptive labels. Preserve existing group and article IDs so bookmarks remain valid when page numbers change. Label report or assessment dates separately from incident dates, and update the sources-reviewed date only after reviewing the evidence.
+
+The script derives the current page and counts from those sections. All briefs remain readable without JavaScript and when printing. Before publishing pagination changes, check direct group and article links, Back/Forward, keyboard focus, mobile layout, and the existing navigation dropdowns.
 
 ## Asset Guidelines
 

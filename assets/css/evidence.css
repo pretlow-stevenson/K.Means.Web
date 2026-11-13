@@ -1,0 +1,122 @@
+.evidence-page {
+  max-width: 980px;
+  scroll-margin-top: 80px;
+}
+
+.evidence-page[hidden] {
+  display: none;
+}
+
+.evidence-page + .evidence-page {
+  margin-top: 32px;
+}
+
+.evidence-page h3 {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.evidence-page h4 {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.evidence-page h3:focus:not(:focus-visible),
+.evidence-page h4:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.evidence-page h3:focus-visible,
+.evidence-page h4:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 6px;
+}
+
+.evidence-page .evidence-date {
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.64);
+}
+
+/* Switching pages should expose the evidence immediately, without reveal delays. */
+.evidence-page .motion-stagger-item {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.evidence-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 980px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.evidence-pagination p {
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.evidence-pagination ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.evidence-pagination a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  color: #111;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.evidence-pagination a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.evidence-pagination a[aria-current="page"] {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+@media print {
+  .evidence-page[hidden] {
+    display: block;
+  }
+
+  #alignment-evidence {
+    opacity: 1;
+    transform: none;
+  }
+
+  .evidence-page article {
+    break-inside: avoid;
+  }
+
+  .evidence-pagination {
+    display: none;
+  }
+}

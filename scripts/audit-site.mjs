@@ -224,7 +224,15 @@ for (const file of htmlFiles) {
       addIssue(file, `target="_blank" is missing rel="noopener": ${value}`);
     }
 
-    if (isExternal(value) || value.startsWith('#')) {
+    if (value.startsWith('#')) {
+      const fragment = value.slice(1);
+      if (fragment && !ids.includes(fragment)) {
+        addIssue(file, `missing fragment target: ${value}`);
+      }
+      continue;
+    }
+
+    if (isExternal(value)) {
       continue;
     }
 
