@@ -417,6 +417,24 @@ sup {
   max-width: 720px;
 }
 
+.founder-byline {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.founder-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.founder-byline h3 {
+  margin-bottom: 4px;
+}
+
 .text-stack p,
 .capability-item p,
 .recording-item p,
@@ -1013,6 +1031,11 @@ sup {
 }
 
 @media (max-width: 560px) {
+  .founder-byline {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 16px;
+  }
+
   .site-header {
     /* Preserve z-index above animated content without making the mobile header sticky. */
     position: relative;
