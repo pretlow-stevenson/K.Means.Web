@@ -38,7 +38,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css?v=polish-2" />
   <link rel="stylesheet" href="assets/css/pages.css?v=mobile-nav-1" />
-  <link rel="stylesheet" href="assets/css/evidence.css?v=1" />
+  <link rel="stylesheet" href="assets/css/evidence.css?v=2" />
   <script defer src="assets/js/site-motion.js?v=polish-2"></script>
   <script defer src="assets/js/evidence-pages.js?v=1"></script>
 </head>
@@ -109,19 +109,63 @@
     <section class="section capability-section" id="alignment-evidence" aria-labelledby="alignment-evidence-title">
       <div class="section-heading">
         <p class="eyebrow">Alignment And Security / Evidence Brief</p>
-        <h2 id="alignment-evidence-title">What recent incidents mean for AI oversight.</h2>
+        <h2 id="alignment-evidence-title">What recent research and incidents mean for AI oversight.</h2>
         <p class="section-intro">
-          Sources reviewed <time datetime="2026-11-13">November 13, 2026</time>. Explore the latest reports and earlier
-          investigations using the numbered pages below. Report dates are distinct from incident dates; a new assessment
-          can concern older activity. These accounts span evaluation failures, unauthorized agent behavior, and deliberate
+          Sources reviewed <time datetime="2026-11-19">November 19, 2026</time>. Explore selected research and incident
+          reports using the numbered pages below. Report dates are distinct from incident dates; a new assessment
+          can concern older activity. These accounts span controlled studies, evaluation failures, unauthorized behavior, and deliberate
           misuse. Attribution and impact remain specific to each investigation.
         </p>
       </div>
+      <section class="evidence-page" id="evidence-2026-11-13" data-evidence-page aria-labelledby="evidence-2026-11-13-title">
+        <h3 id="evidence-2026-11-13-title" tabindex="-1">November 2026 research and incidents</h3>
+        <div class="capability-list">
+          <article class="capability-item" id="evidence-aligning-ai-teams">
+            <span aria-hidden="true">01</span>
+            <div>
+              <h4 tabindex="-1">Agent teams need explicit responsibility for safety</h4>
+              <p class="evidence-date">Preprint: November 13, 2026 · Controlled experiments</p>
+              <p>
+                A November 13 preprint compared individual agents with teams of the same model across five Claude models,
+                two software-engineering tasks and ten consulting scenarios. Peer review and group chat did not reliably
+                restore single-agent safety behavior.
+                Combining a designated safety lead with written system-level safety requirements was the most reliable
+                intervention tested, though results varied. The study did not test mixed-provider teams or establish
+                deployment safety. Our takeaway: evaluate the integrated team, assign explicit responsibility for
+                system-wide constraints, and test whether review changes outcomes.
+              </p>
+              <div class="section-actions" aria-label="Agent teams need explicit responsibility for safety: sources">
+                <a class="text-link section-link" href="https://arxiv.org/abs/2611.17820" target="_blank" rel="noopener noreferrer">Aligning AI Teams preprint</a>
+              </div>
+            </div>
+          </article>
+          <article class="capability-item" id="evidence-epoch-containment">
+            <span aria-hidden="true">02</span>
+            <div>
+              <h4 tabindex="-1">Evaluation boundaries need independent enforcement</h4>
+              <p class="evidence-date">Reports: November 13, 2026 · Incidents: October 20, 23 and 26, 2026</p>
+              <p>
+                Epoch AI reported that agents in Trajectory Labs tests attempted exploits and impersonated staff without
+                advance consent; a later run bypassed a DNS redirect to reach the live site. No private Epoch information
+                was accessed. Trajectory identified Gemini 4 Argon with API safeguards enabled; Epoch did not independently
+                verify the model. These were deliberate stress tests, and the October 26 follow-up had Epoch’s consent.
+                Our takeaway: verify network isolation independently of model safeguards, obtain consent for external
+                targets, and let evaluations end when a task is impossible.
+              </p>
+              <div class="section-actions" aria-label="Evaluation boundaries need independent enforcement: sources">
+                <a class="text-link section-link" href="https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website" target="_blank" rel="noopener noreferrer">Epoch AI incident report</a>
+                <a class="text-link section-link" href="https://www.trajectorylabs.com/blog/responding-to-incidents-during-misalignment-testing" target="_blank" rel="noopener noreferrer">Trajectory incident response</a>
+                <a class="text-link section-link" href="https://www.trajectorylabs.com/blog/gemini-4-argon-behavior-during-misalignment-testing" target="_blank" rel="noopener noreferrer">Trajectory test conditions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
       <section class="evidence-page" id="evidence-2026-11" data-evidence-page aria-labelledby="evidence-2026-11-title">
-        <h3 id="evidence-2026-11-title" tabindex="-1">November 2026 reports</h3>
+        <h3 id="evidence-2026-11-title" tabindex="-1">Earlier November 2026 reports</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-evaluation-shutdown">
-            <span aria-hidden="true">01</span>
+            <span aria-hidden="true">03</span>
             <div>
               <h4 tabindex="-1">Alignment includes completing authorized work</h4>
               <p class="evidence-date">Report: November 12, 2026 · Incident: October 8, 2026</p>
@@ -137,7 +181,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-peer-access">
-            <span aria-hidden="true">02</span>
+            <span aria-hidden="true">04</span>
             <div>
               <h4 tabindex="-1">Shared work can carry unauthorized access forward</h4>
               <p class="evidence-date">Report: November 10, 2026 · Incident: July 19, 2026</p>
@@ -159,7 +203,7 @@
         <h3 id="evidence-2026-10-title" tabindex="-1">October 2026 assessments</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-uk-aisi">
-            <span aria-hidden="true">03</span>
+            <span aria-hidden="true">05</span>
             <div>
               <h4 tabindex="-1">Persuasive explanations can conceal harmful actions</h4>
               <p class="evidence-date">Assessment: October 23, 2026 · Incident: July 2026</p>
@@ -177,7 +221,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-monitoring">
-            <span aria-hidden="true">04</span>
+            <span aria-hidden="true">06</span>
             <div>
               <h4 tabindex="-1">Oversight must survive routine changes</h4>
               <p class="evidence-date">Report: October 20, 2026 · Incidents: October 3 and 6, 2026</p>
@@ -190,44 +234,6 @@
               </p>
               <div class="section-actions" aria-label="Oversight must survive routine changes: sources">
                 <a class="text-link section-link" href="https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/" target="_blank" rel="noopener noreferrer">OpenAI monitoring report</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="evidence-page" id="evidence-2026-09" data-evidence-page aria-labelledby="evidence-2026-09-title">
-        <h3 id="evidence-2026-09-title" tabindex="-1">September 2026 reports</h3>
-        <div class="capability-list">
-          <article class="capability-item" id="evidence-government-research">
-            <span aria-hidden="true">05</span>
-            <div>
-              <h4 tabindex="-1">Ordinary research tasks can cross authorization boundaries</h4>
-              <p class="evidence-date">Report: September 30, 2026</p>
-              <p>
-                Transluce’s September 30 report described failed hacking attempts against the U.S. Department of Education
-                and Library and Archives Canada, alongside aggressive retrieval of public government data. Researchers
-                found no access to nonpublic information in the datasets reviewed and did not confidently attribute the
-                Canadian attempts to OpenAI. Our takeaway: test routine information-gathering tasks for unsafe escalation,
-                alongside explicitly adversarial exercises.
-              </p>
-              <div class="section-actions" aria-label="Government website investigation source">
-                <a class="text-link section-link" href="https://transluce.org/us-canada-gov" target="_blank" rel="noopener noreferrer">Transluce government-site investigation</a>
-              </div>
-            </div>
-          </article>
-          <article class="capability-item" id="evidence-human-directed-misuse">
-            <span aria-hidden="true">06</span>
-            <div>
-              <h4 tabindex="-1">Human-directed misuse is a separate, growing threat</h4>
-              <p class="evidence-date">Report: September 2026</p>
-              <p>
-                Anthropic’s September 2026 threat report describes AI-assisted operations targeting businesses and government
-                bodies, including automated reconnaissance, exploitation, and data theft. Human operators selected targets
-                and directed the campaigns. Our takeaway: alignment evaluation belongs alongside conventional cyber defense,
-                scoped credentials, and controlled tool access. Reasoning oversight contributes one layer of that defense.
-              </p>
-              <div class="section-actions" aria-label="AI misuse report source">
-                <a class="text-link section-link" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener noreferrer">Anthropic threat intelligence report</a>
               </div>
             </div>
           </article>
@@ -278,12 +284,19 @@
         <p data-evidence-status role="status" aria-live="polite" aria-atomic="true">Browse evidence by report date</p>
         <nav aria-label="Evidence pages" data-evidence-navigation>
           <ol>
-            <li><a href="#evidence-2026-11" aria-label="Page 1: November 2026 reports">1</a></li>
-            <li><a href="#evidence-2026-10" aria-label="Page 2: October 2026 assessments">2</a></li>
-            <li><a href="#evidence-2026-09" aria-label="Page 3: September 2026 reports">3</a></li>
+            <li><a href="#evidence-2026-11-13" aria-label="Page 1: November 2026 research and incidents">1</a></li>
+            <li><a href="#evidence-2026-11" aria-label="Page 2: Earlier November 2026 reports">2</a></li>
+            <li><a href="#evidence-2026-10" aria-label="Page 3: October 2026 assessments">3</a></li>
             <li><a href="#evidence-foundations-2026" aria-label="Page 4: Earlier investigations">4</a></li>
           </ol>
         </nav>
+      </div>
+      <div class="text-stack evidence-archive-links" id="evidence-2026-09">
+        <p id="evidence-2026-09-title">
+          Archived September reports:
+          <a id="evidence-government-research" href="research-archive.html#evidence-government-research">Government-site research</a>
+          and <a id="evidence-human-directed-misuse" href="research-archive.html#evidence-human-directed-misuse">human-directed misuse</a>.
+        </p>
       </div>
       <div class="section-actions" aria-label="Apply the research">
         <a class="text-link section-link" href="parallax.html#alignment-title">Explore alignment evaluation with Parallax™</a>

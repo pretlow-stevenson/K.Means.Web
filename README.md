@@ -36,7 +36,7 @@ The audit verifies local links and fragments, responsive image references and in
 
 ## Updating the Evidence Brief
 
-Keep incident summaries and primary-source links in `research.html`. Each `data-evidence-page` section holds two briefs; add new groups above older groups and update the numbered navigation and its descriptive labels. Preserve existing group and article IDs so bookmarks remain valid when page numbers change. Label report or assessment dates separately from incident dates, and update the sources-reviewed date only after reviewing the evidence.
+Keep research and incident summaries with primary-source links in `research.html`. Each `data-evidence-page` section holds two briefs; keep no more than eight active briefs, add new groups above older groups, and update the numbered navigation and its descriptive labels. Consolidate follow-ups instead of duplicating incidents. Move retired coverage to `research-archive.html`, retaining its source-review context. Preserve existing group and article IDs on the Research page as links to the archived coverage so bookmarks remain useful. Label report or assessment dates separately from incident dates, and update the sources-reviewed date only after reviewing the evidence alongside a substantive change.
 
 The script derives the current page and counts from those sections. All briefs remain readable without JavaScript and when printing. Before publishing pagination changes, check direct group and article links, Back/Forward, keyboard focus, mobile layout, and the existing navigation dropdowns.
 

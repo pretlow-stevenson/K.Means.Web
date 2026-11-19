@@ -7,6 +7,17 @@
   display: none;
 }
 
+.evidence-archive-links {
+  margin-top: 24px;
+}
+
+/* Archived bookmarks use native fragment navigation beneath the sticky header. */
+.evidence-page [id],
+.evidence-archive-links,
+.evidence-archive-links [id] {
+  scroll-margin-top: 92px;
+}
+
 .evidence-page + .evidence-page {
   margin-top: 32px;
 }
