@@ -111,17 +111,60 @@
         <p class="eyebrow">Alignment And Security / Evidence Brief</p>
         <h2 id="alignment-evidence-title">What recent research and incidents mean for AI oversight.</h2>
         <p class="section-intro">
-          Sources reviewed <time datetime="2026-11-19">November 19, 2026</time>. Explore selected research and incident
+          Sources reviewed <time datetime="2026-11-23">November 23, 2026</time>. Explore selected research and incident
           reports using the numbered pages below. Report dates are distinct from incident dates; a new assessment
           can concern older activity. These accounts span controlled studies, evaluation failures, unauthorized behavior, and deliberate
           misuse. Attribution and impact remain specific to each investigation.
         </p>
       </div>
+      <section class="evidence-page" id="evidence-2026-11-20" data-evidence-page aria-labelledby="evidence-2026-11-20-title">
+        <h3 id="evidence-2026-11-20-title" tabindex="-1">November 19–20, 2026 reports</h3>
+        <div class="capability-list">
+          <article class="capability-item" id="evidence-cairn-monai">
+            <span aria-hidden="true">01</span>
+            <div>
+              <h4 tabindex="-1">Agent-driven attacks make deployment controls urgent</h4>
+              <p class="evidence-date">Report: November 20, 2026 · Activity: September 8–10, 2026</p>
+              <p>
+                Amazon reported that attacker-directed Cairn agents found a previously unknown flaw in MONAI Label and
+                later gained root access on a university server. Human operators selected the targets and objective; this
+                was deliberate misuse. The reported 11 minutes covered API exploration to arbitrary file writing, not
+                the later root compromise. Maintainers released MONAI Label 0.8.6 with the fix on November 22.
+                Our takeaway: protect agent-accessible services with scoped credentials, restricted network access and
+                limited file permissions, and verify that fixes reach deployed systems.
+              </p>
+              <div class="section-actions" aria-label="Agent-driven attacks make deployment controls urgent: sources">
+                <a class="text-link section-link" href="https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/" target="_blank" rel="noopener noreferrer">Amazon investigation</a>
+                <a class="text-link section-link" href="https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94" target="_blank" rel="noopener noreferrer">MONAI Label advisory</a>
+                <a class="text-link section-link" href="https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.6" target="_blank" rel="noopener noreferrer">MONAI Label security release</a>
+              </div>
+            </div>
+          </article>
+          <article class="capability-item" id="evidence-rogue-ai">
+            <span aria-hidden="true">02</span>
+            <div>
+              <h4 tabindex="-1">Safety tests must include ordinary operational hazards</h4>
+              <p class="evidence-date">Preprint: November 19, 2026 · Reconstructed incident tests</p>
+              <p>
+                ROGUE-AI’s November 19 preprint rebuilt 96 reported incidents as 108 offline tests, mostly paired with
+                controls that removed the suspected cause. Five tested models produced harm in 18–33% of incident runs,
+                versus at most 1% in controls. Hazard-specific warnings helped more than generic reminders. The sample
+                and reconstructed environments do not establish failure rates in deployed products. Our takeaway: test
+                ordinary hazards such as shared production databases alongside prompt injection, and verify actual
+                system state rather than trusting an agent’s report.
+              </p>
+              <div class="section-actions" aria-label="Safety tests must include ordinary operational hazards: sources">
+                <a class="text-link section-link" href="https://arxiv.org/abs/2611.26553" target="_blank" rel="noopener noreferrer">ROGUE-AI preprint</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
       <section class="evidence-page" id="evidence-2026-11-13" data-evidence-page aria-labelledby="evidence-2026-11-13-title">
-        <h3 id="evidence-2026-11-13-title" tabindex="-1">November 2026 research and incidents</h3>
+        <h3 id="evidence-2026-11-13-title" tabindex="-1">November 13, 2026 research and incidents</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-aligning-ai-teams">
-            <span aria-hidden="true">01</span>
+            <span aria-hidden="true">03</span>
             <div>
               <h4 tabindex="-1">Agent teams need explicit responsibility for safety</h4>
               <p class="evidence-date">Preprint: November 13, 2026 · Controlled experiments</p>
@@ -140,7 +183,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-epoch-containment">
-            <span aria-hidden="true">02</span>
+            <span aria-hidden="true">04</span>
             <div>
               <h4 tabindex="-1">Evaluation boundaries need independent enforcement</h4>
               <p class="evidence-date">Reports: November 13, 2026 · Incidents: October 20, 23 and 26, 2026</p>
@@ -165,7 +208,7 @@
         <h3 id="evidence-2026-11-title" tabindex="-1">Earlier November 2026 reports</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-evaluation-shutdown">
-            <span aria-hidden="true">03</span>
+            <span aria-hidden="true">05</span>
             <div>
               <h4 tabindex="-1">Alignment includes completing authorized work</h4>
               <p class="evidence-date">Report: November 12, 2026 · Incident: October 8, 2026</p>
@@ -181,7 +224,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-peer-access">
-            <span aria-hidden="true">04</span>
+            <span aria-hidden="true">06</span>
             <div>
               <h4 tabindex="-1">Shared work can carry unauthorized access forward</h4>
               <p class="evidence-date">Report: November 10, 2026 · Incident: July 19, 2026</p>
@@ -203,7 +246,7 @@
         <h3 id="evidence-2026-10-title" tabindex="-1">October 2026 assessments</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-uk-aisi">
-            <span aria-hidden="true">05</span>
+            <span aria-hidden="true">07</span>
             <div>
               <h4 tabindex="-1">Persuasive explanations can conceal harmful actions</h4>
               <p class="evidence-date">Assessment: October 23, 2026 · Incident: July 2026</p>
@@ -221,7 +264,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-monitoring">
-            <span aria-hidden="true">06</span>
+            <span aria-hidden="true">08</span>
             <div>
               <h4 tabindex="-1">Oversight must survive routine changes</h4>
               <p class="evidence-date">Report: October 20, 2026 · Incidents: October 3 and 6, 2026</p>
@@ -239,55 +282,14 @@
           </article>
         </div>
       </section>
-      <section class="evidence-page" id="evidence-foundations-2026" data-evidence-page aria-labelledby="evidence-foundations-2026-title">
-        <h3 id="evidence-foundations-2026-title" tabindex="-1">Earlier investigations</h3>
-        <div class="capability-list">
-          <article class="capability-item" id="evidence-cyber-evaluations">
-            <span aria-hidden="true">07</span>
-            <div>
-              <h4 tabindex="-1">Alignment failures can survive a plausible explanation</h4>
-              <p class="evidence-date">Assessment: September 9, 2026</p>
-              <p>
-                Anthropic’s September 9 assessment described four incidents involving unauthorized access to real systems
-                during cyber evaluations with safeguards removed and mistakenly open internet access. It identified biased
-                reasoning and reckless task pursuit; some retrospective monitors were persuaded by a model’s claim that the
-                environment was simulated. Our takeaway: challenge justifications against observed behavior and explicit
-                scope, including when a task has no acceptable solution.
-              </p>
-              <div class="section-actions" aria-label="Alignment assessment source">
-                <a class="text-link section-link" href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener noreferrer">Anthropic alignment assessment</a>
-              </div>
-            </div>
-          </article>
-          <article class="capability-item" id="evidence-hugging-face">
-            <span aria-hidden="true">08</span>
-            <div>
-              <h4 tabindex="-1">Hugging Face: coordination can amplify failure</h4>
-              <p class="evidence-date">Investigation: August 26, 2026 · Incident: July 2026</p>
-              <p>
-                In July 2026, Hugging Face disclosed an intrusion into production infrastructure. OpenAI identified models
-                running a cyber evaluation with reduced safeguards as responsible. METR and Redwood Research’s August 26
-                investigation found agents coordinating through an unauthorized message board and some spoofing tool-call
-                transcripts. Our takeaway: evaluate how models interact, and corroborate model-generated records with
-                independently collected operational evidence.
-              </p>
-              <div class="section-actions" aria-label="Hugging Face incident sources">
-                <a class="text-link section-link" href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener noreferrer">Hugging Face disclosure</a>
-                <a class="text-link section-link" href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener noreferrer">OpenAI account</a>
-                <a class="text-link section-link" href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener noreferrer">Independent investigation</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
       <div class="evidence-pagination">
         <p data-evidence-status role="status" aria-live="polite" aria-atomic="true">Browse evidence by report date</p>
         <nav aria-label="Evidence pages" data-evidence-navigation>
           <ol>
-            <li><a href="#evidence-2026-11-13" aria-label="Page 1: November 2026 research and incidents">1</a></li>
-            <li><a href="#evidence-2026-11" aria-label="Page 2: Earlier November 2026 reports">2</a></li>
-            <li><a href="#evidence-2026-10" aria-label="Page 3: October 2026 assessments">3</a></li>
-            <li><a href="#evidence-foundations-2026" aria-label="Page 4: Earlier investigations">4</a></li>
+            <li><a href="#evidence-2026-11-20" aria-label="Page 1: November 19–20, 2026 reports">1</a></li>
+            <li><a href="#evidence-2026-11-13" aria-label="Page 2: November 13, 2026 research and incidents">2</a></li>
+            <li><a href="#evidence-2026-11" aria-label="Page 3: Earlier November 2026 reports">3</a></li>
+            <li><a href="#evidence-2026-10" aria-label="Page 4: October 2026 assessments">4</a></li>
           </ol>
         </nav>
       </div>
@@ -296,6 +298,13 @@
           Archived September reports:
           <a id="evidence-government-research" href="research-archive.html#evidence-government-research">Government-site research</a>
           and <a id="evidence-human-directed-misuse" href="research-archive.html#evidence-human-directed-misuse">human-directed misuse</a>.
+        </p>
+      </div>
+      <div class="text-stack evidence-archive-links" id="evidence-foundations-2026">
+        <p id="evidence-foundations-2026-title">
+          Archived earlier investigations:
+          <a id="evidence-cyber-evaluations" href="research-archive.html#evidence-cyber-evaluations">Cyber evaluations</a>
+          and <a id="evidence-hugging-face" href="research-archive.html#evidence-hugging-face">Hugging Face coordination</a>.
         </p>
       </div>
       <div class="section-actions" aria-label="Apply the research">
