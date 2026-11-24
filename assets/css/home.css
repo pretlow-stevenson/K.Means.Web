@@ -223,6 +223,140 @@ sup {
   pointer-events: none;
 }
 
+.holiday-ornaments {
+  position: absolute;
+  top: 3%;
+  left: calc(100% + 4px);
+  width: 92px;
+  height: 158px;
+  pointer-events: none;
+}
+
+.holiday-ornaments[hidden] {
+  display: none;
+}
+
+.ornament-pendulum {
+  --cord-length: 112px;
+  --sphere-size: 36px;
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 0;
+  height: var(--cord-length);
+  transform: rotate(var(--angle, 0rad));
+  transform-origin: 0 0;
+}
+
+.ornament-pendulum::before {
+  content: "";
+  position: absolute;
+  left: -0.5px;
+  top: 0;
+  width: 1px;
+  height: calc(100% - var(--sphere-size) / 2 - 6px);
+  background: linear-gradient(to bottom, transparent, rgba(109, 103, 89, 0.32) 24%, rgba(109, 103, 89, 0.5));
+}
+
+.ornament-pendulum-gold {
+  --cord-length: 91px;
+  --sphere-size: 30px;
+  top: 9px;
+  left: 64px;
+}
+
+.ornament {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ornament:focus-visible {
+  outline: 1px solid #82755e;
+  outline-offset: 4px;
+}
+
+.ornament.is-held {
+  cursor: grabbing;
+}
+
+.ornament-sphere {
+  position: relative;
+  width: var(--sphere-size);
+  height: var(--sphere-size);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 32% 24%, rgba(255, 255, 255, 0.95), transparent 36%),
+    radial-gradient(circle at 37% 30%, #f3f3ee 5%, #d6d9d7 37%, #a5aeae 70%, #798586 100%);
+  box-shadow: inset -2px -3px 5px rgba(45, 57, 58, 0.14), inset 0 0 0 0.5px rgba(255, 255, 255, 0.7), 2px 5px 9px rgba(47, 54, 54, 0.12);
+  pointer-events: none;
+}
+
+.ornament-sphere::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 4px);
+  top: -6px;
+  width: 8px;
+  height: 7px;
+  border-radius: 2px 2px 1px 1px;
+  background: repeating-linear-gradient(90deg, #9a9c92 0, #dcddd4 1px, #b9bbae 2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.ornament-pendulum-gold .ornament-sphere {
+  background:
+    radial-gradient(ellipse at 32% 24%, rgba(255, 252, 232, 0.9), transparent 37%),
+    radial-gradient(circle at 37% 30%, #ede1bc 5%, #d4bd83 40%, #b4985b 72%, #8d753f 100%);
+  box-shadow: inset -2px -3px 5px rgba(91, 66, 25, 0.15), inset 0 0 0 0.5px rgba(255, 247, 213, 0.65), 2px 5px 9px rgba(89, 71, 35, 0.12);
+}
+
+.ornament-pendulum-gold .ornament-sphere::before {
+  background: repeating-linear-gradient(90deg, #9e8656 0, #e1c995 1px, #baa16b 2px);
+}
+
+.ornament-hint {
+  position: absolute;
+  top: 147px;
+  left: -27px;
+  width: 150px;
+  color: #77746b;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.holiday-ornaments:focus-within .ornament-hint,
+.holiday-ornaments:has(.ornament:hover) .ornament-hint {
+  opacity: 1;
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .holiday-ornaments {
+    left: calc(100% - 18px);
+    top: -44px;
+    scale: 0.82;
+    transform-origin: top left;
+  }
+}
+
 .section {
   padding: clamp(58px, 8vw, 104px) clamp(20px, 5vw, 72px);
   border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -632,7 +766,19 @@ sup {
   }
 
   .hero-visual {
-    display: none;
+    display: grid;
+    justify-self: center;
+    margin: 8px 70px 0 0;
+  }
+
+  .hero-logo {
+    width: 120px;
+  }
+
+  .holiday-ornaments {
+    top: -10px;
+    scale: 0.85;
+    transform-origin: top left;
   }
 
   .hero-actions,

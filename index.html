@@ -91,8 +91,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&amp;family=Inter:wght@400;500;600&amp;display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css?v=polish-2" />
-  <link rel="stylesheet" href="assets/css/home.css?v=mobile-nav-1" />
+  <link rel="stylesheet" href="assets/css/home.css?v=holiday-1" />
   <script defer src="assets/js/site-motion.js?v=polish-2"></script>
+  <script defer src="assets/js/home-ornaments.js?v=holiday-1"></script>
 </head>
 
 <body>
@@ -136,8 +137,22 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual">
         <img class="hero-logo" src="assets/images/kmeans-mark.png" width="481" height="560" alt="" decoding="async" fetchpriority="high" />
+        <div class="holiday-ornaments" role="group" aria-label="Holiday ornaments" hidden>
+          <p class="visually-hidden" id="ornament-instructions">Drag an ornament and release to swing it. You can also press Enter or Space to nudge it, use the left and right arrow keys, or press Escape to stop.</p>
+          <div class="ornament-pendulum ornament-pendulum-silver">
+            <button class="ornament" type="button" aria-label="Swing the silver ornament" aria-describedby="ornament-instructions">
+              <span class="ornament-sphere" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="ornament-pendulum ornament-pendulum-gold">
+            <button class="ornament" type="button" aria-label="Swing the gold ornament" aria-describedby="ornament-instructions">
+              <span class="ornament-sphere" aria-hidden="true"></span>
+            </button>
+          </div>
+          <span class="ornament-hint" aria-hidden="true">give one a gentle tug</span>
+        </div>
       </div>
     </section>
 

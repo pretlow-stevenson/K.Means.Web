@@ -7,12 +7,11 @@ The public K MEANS AI site is a dependency-free static website published through
 - `index.html` is the home page.
 - The remaining top-level HTML files are product, research, approach, and company pages.
 - `assets/css/site.css` contains shared interaction, navigation, accessibility, and motion foundations.
-- `assets/css/home.css` contains home-page layout and the soccer easter egg presentation.
+- `assets/css/home.css` contains home-page layout and the holiday ornament presentation.
 - `assets/css/pages.css` contains the shared layout system for interior pages.
 - `assets/js/site-motion.js` contains shared navigation and progressive, reduced-motion-aware page animation behavior.
 - `assets/js/evidence-pages.js` and `assets/css/evidence.css` paginate the research evidence brief without changing the shared page layout.
-- `assets/js/home-soccer.js` conditionally loads the one-time home-page soccer flourish when the visitor is eligible to see it.
-- `assets/js/vendor/` contains the pinned Matter.js runtime and its license; it is loaded only for that optional flourish.
+- `assets/js/home-ornaments.js` adds two draggable holiday pendulums beside the home-page logo, with a brief arrival motion once per session, keyboard controls, and reduced-motion support. It uses no external runtime and sleeps when settled or out of view. Remove its script and the `holiday-ornaments` markup to retire the seasonal interaction.
 
 ## Local Preview
 
