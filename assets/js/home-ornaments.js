@@ -30,7 +30,6 @@
   let suppressClick = false;
   let expired = false;
   let observer = null;
-  let lastGustTime = -Infinity;
 
   const render = () => ornaments.forEach((ornament) => {
     ornament.element.style.setProperty('--angle', `${-ornament.angle}rad`);
@@ -170,16 +169,6 @@
     );
   };
 
-  const sendGust = (ornament, strength) => {
-    const time = performance.now();
-    if (expired || reducedMotion.matches || time - lastGustTime < 120 || Math.abs(strength) < 0.05) return;
-    lastGustTime = time;
-    const rect = ornament.button.getBoundingClientRect();
-    visual.dispatchEvent(new CustomEvent('holiday:gust', {
-      detail: { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2, strength: clamp(strength, -1, 1) }
-    }));
-  };
-
   const nudge = (ornament, direction = 1) => {
     if (reducedMotion.matches) {
       ornament.angle = clamp(ornament.angle + direction * 0.12, -limit, limit);
@@ -190,7 +179,6 @@
       return;
     }
     ornament.velocity = direction * 0.9;
-    sendGust(ornament, direction * 0.65);
     wake();
   };
 
@@ -230,7 +218,6 @@
         ornaments.forEach(constrain);
       }
       render();
-      sendGust(ornament, ornament.velocity / 2.4);
     });
 
     const release = (event) => {

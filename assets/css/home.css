@@ -253,13 +253,12 @@ sup {
   animation-play-state: paused;
 }
 
-.snow-grain {
+.snow-crystal {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 0 0 0.65px rgba(112, 131, 146, 0.42), 0 1px 3px rgba(112, 131, 146, 0.2);
+  background: url('../images/holiday-snowflake.svg') center / contain no-repeat;
+  transform: rotate(var(--snow-angle));
 }
 
 .hero-snow.is-running .snowflake {
