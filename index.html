@@ -91,9 +91,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&amp;family=Inter:wght@400;500;600&amp;display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css?v=polish-2" />
-  <link rel="stylesheet" href="assets/css/home.css?v=holiday-1" />
+  <link rel="stylesheet" href="assets/css/home.css?v=winter-refinements-1" />
   <script defer src="assets/js/site-motion.js?v=polish-2"></script>
-  <script defer src="assets/js/home-ornaments.js?v=holiday-1"></script>
+  <script defer src="assets/js/home-holiday.js?v=winter-refinements-1"></script>
+  <script defer src="assets/js/home-ornaments.js?v=winter-refinements-1"></script>
+  <script defer src="assets/js/home-snow.js?v=winter-refinements-1"></script>
 </head>
 
 <body>
@@ -137,8 +139,10 @@
         </div>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual" data-holiday-until="2027-01-02T00:00:00-05:00">
+        <div class="hero-snow" aria-hidden="true" hidden></div>
         <img class="hero-logo" src="assets/images/kmeans-mark.png" width="481" height="560" alt="" decoding="async" fetchpriority="high" />
+        <button class="snow-toggle" type="button" aria-label="Pause snowfall" hidden>pause snow</button>
         <div class="holiday-ornaments" role="group" aria-label="Holiday ornaments" hidden>
           <p class="visually-hidden" id="ornament-instructions">Drag an ornament and release to swing it. You can also press Enter or Space to nudge it, use the left and right arrow keys, or press Escape to stop.</p>
           <div class="ornament-pendulum ornament-pendulum-silver">

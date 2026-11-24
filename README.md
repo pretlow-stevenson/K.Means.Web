@@ -11,7 +11,9 @@ The public K MEANS AI site is a dependency-free static website published through
 - `assets/css/pages.css` contains the shared layout system for interior pages.
 - `assets/js/site-motion.js` contains shared navigation and progressive, reduced-motion-aware page animation behavior.
 - `assets/js/evidence-pages.js` and `assets/css/evidence.css` paginate the research evidence brief without changing the shared page layout.
+- `assets/js/home-holiday.js` enables the holiday treatment until **January 2, 2027 at 12:00 a.m. America/New_York (05:00 UTC)**, configured by `data-holiday-until` on the home-page visual. It loads before the ornament and snow scripts, handles pages left open at the cutoff, and restores the normal mobile layout. This is a fixed cutoff, not an annual recurrence.
 - `assets/js/home-ornaments.js` adds two draggable holiday pendulums beside the home-page logo, with a brief arrival motion once per session, keyboard controls, and reduced-motion support. It uses no external runtime and sleeps when settled or out of view. Remove its script and the `holiday-ornaments` markup to retire the seasonal interaction.
+- `assets/js/home-snow.js` adds sparse, continuous snowfall in front of the home-page logo, beneath the interactive ornaments. Tugging or nudging an ornament sends a brief gust through nearby flakes. The pause control remembers the visitor's choice for the session; reduced motion hides the snow, and animation pauses while the logo or page is out of view. Gusts honor these settings. At the seasonal cutoff, both effects stop and release their animation work and observers.
 
 ## Local Preview
 

@@ -209,6 +209,7 @@ sup {
 
 .hero-visual {
   position: relative;
+  isolation: isolate;
   display: grid;
   place-items: center;
   justify-self: start;
@@ -223,8 +224,91 @@ sup {
   pointer-events: none;
 }
 
+.hero-snow {
+  position: absolute;
+  z-index: 2;
+  inset: -24% -48% -24% -22%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 42%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 42%, transparent 78%);
+}
+
+.hero-snow[hidden],
+.snow-toggle[hidden],
+.hero-visual:not([data-holiday="active"]) .hero-snow,
+.hero-visual:not([data-holiday="active"]) .snow-toggle,
+.hero-visual:not([data-holiday="active"]) .holiday-ornaments {
+  display: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: 0;
+  left: var(--snow-x);
+  width: var(--snow-size);
+  height: var(--snow-size);
+  opacity: 0;
+  animation: winter-snowfall var(--snow-duration) linear var(--snow-delay) infinite;
+  animation-play-state: paused;
+}
+
+.snow-grain {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 0 0.65px rgba(112, 131, 146, 0.42), 0 1px 3px rgba(112, 131, 146, 0.2);
+}
+
+.hero-snow.is-running .snowflake {
+  animation-play-state: running;
+}
+
+@keyframes winter-snowfall {
+  0% { transform: translate3d(0, -10px, 0); opacity: 0; }
+  15% { opacity: var(--snow-opacity); }
+  45% { transform: translate3d(calc(var(--snow-drift) * 0.65), calc(var(--snow-fall) * 0.45), 0); }
+  80% { opacity: var(--snow-opacity); }
+  100% { transform: translate3d(var(--snow-drift), var(--snow-fall), 0); opacity: 0; }
+}
+
+.snow-toggle {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-height: 32px;
+  padding: 4px 5px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: #77746b;
+  font: inherit;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.snow-toggle:hover {
+  color: #37342f;
+}
+
+.snow-toggle:focus-visible {
+  outline: 1px solid #82755e;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-snow,
+  .snow-toggle {
+    display: none;
+  }
+}
+
 .holiday-ornaments {
   position: absolute;
+  z-index: 3;
   top: 3%;
   left: calc(100% + 4px);
   width: 92px;
@@ -766,6 +850,10 @@ sup {
   }
 
   .hero-visual {
+    display: none;
+  }
+
+  .hero-visual[data-holiday="active"] {
     display: grid;
     justify-self: center;
     margin: 8px 70px 0 0;

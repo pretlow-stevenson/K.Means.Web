@@ -1,7 +1,10 @@
 (() => {
   const scene = document.querySelector('.holiday-ornaments');
-  if (!scene || !window.requestAnimationFrame || !window.PointerEvent) return;
+  const visual = scene?.closest('.hero-visual');
+  if (!scene || visual?.dataset.holiday !== 'active' || !window.requestAnimationFrame || !window.PointerEvent) return;
 
+  const listeners = new AbortController();
+  const on = (target, type, handler, options = {}) => target.addEventListener(type, handler, { ...options, signal: listeners.signal });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const sessionKey = 'kmeans-holiday-ornaments-seen';
   const limit = 0.55;
@@ -25,6 +28,9 @@
   let arrived = false;
   let drag = null;
   let suppressClick = false;
+  let expired = false;
+  let observer = null;
+  let lastGustTime = -Infinity;
 
   const render = () => ornaments.forEach((ornament) => {
     ornament.element.style.setProperty('--angle', `${-ornament.angle}rad`);
@@ -104,7 +110,7 @@
 
   const tick = (time) => {
     frame = 0;
-    if (document.hidden || !inView || reducedMotion.matches) return;
+    if (expired || document.hidden || !inView || reducedMotion.matches) return;
     const elapsed = Math.min((time - previousTime) / 1000, 0.05);
     previousTime = time;
     runningTime += elapsed;
@@ -134,13 +140,13 @@
 
   const wake = () => {
     runningTime = 0;
-    if (frame || reducedMotion.matches || document.hidden || !inView) return;
+    if (expired || frame || reducedMotion.matches || document.hidden || !inView) return;
     previousTime = performance.now();
     frame = requestAnimationFrame(tick);
   };
 
   const arrive = () => {
-    if (arrived || document.hidden || !inView) return;
+    if (expired || arrived || document.hidden || !inView) return;
     arrived = true;
     if (reducedMotion.matches) return;
     try {
@@ -164,6 +170,16 @@
     );
   };
 
+  const sendGust = (ornament, strength) => {
+    const time = performance.now();
+    if (expired || reducedMotion.matches || time - lastGustTime < 120 || Math.abs(strength) < 0.05) return;
+    lastGustTime = time;
+    const rect = ornament.button.getBoundingClientRect();
+    visual.dispatchEvent(new CustomEvent('holiday:gust', {
+      detail: { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2, strength: clamp(strength, -1, 1) }
+    }));
+  };
+
   const nudge = (ornament, direction = 1) => {
     if (reducedMotion.matches) {
       ornament.angle = clamp(ornament.angle + direction * 0.12, -limit, limit);
@@ -174,12 +190,13 @@
       return;
     }
     ornament.velocity = direction * 0.9;
+    sendGust(ornament, direction * 0.65);
     wake();
   };
 
   ornaments.forEach((ornament) => {
     const { button } = ornament;
-    button.addEventListener('pointerdown', (event) => {
+    on(button, 'pointerdown', (event) => {
       if (event.button !== 0 || drag || !inView) return;
       event.preventDefault();
       measure();
@@ -198,7 +215,7 @@
       wake();
     });
 
-    button.addEventListener('pointermove', (event) => {
+    on(button, 'pointermove', (event) => {
       if (drag?.pointerId !== event.pointerId || drag.ornament !== ornament) return;
       const time = performance.now();
       const angle = clamp(pointerAngle(event, ornament) + drag.offset, -limit, limit);
@@ -213,6 +230,7 @@
         ornaments.forEach(constrain);
       }
       render();
+      sendGust(ornament, ornament.velocity / 2.4);
     });
 
     const release = (event) => {
@@ -223,14 +241,14 @@
       if (reducedMotion.matches || event.type !== 'pointerup') rest();
       else wake();
     };
-    button.addEventListener('pointerup', release);
-    button.addEventListener('pointercancel', release);
-    button.addEventListener('lostpointercapture', release);
-    button.addEventListener('click', (event) => {
+    on(button, 'pointerup', release);
+    on(button, 'pointercancel', release);
+    on(button, 'lostpointercapture', release);
+    on(button, 'click', (event) => {
       if (!suppressClick || event.detail === 0) nudge(ornament);
       suppressClick = false;
     });
-    button.addEventListener('keydown', (event) => {
+    on(button, 'keydown', (event) => {
       if (event.key === 'Escape') {
         event.preventDefault();
         rest();
@@ -244,25 +262,34 @@
   scene.hidden = false;
   measure();
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
+    observer = new IntersectionObserver(([entry]) => {
+      if (expired) return;
       inView = entry.isIntersecting;
       if (inView) arrive();
       else rest();
-    }, { threshold: 0.2 }).observe(scene);
+    }, { threshold: 0.2 });
+    observer.observe(scene);
   } else {
     inView = true;
     arrive();
   }
 
-  document.addEventListener('visibilitychange', () => {
+  on(document, 'visibilitychange', () => {
     if (document.hidden) rest();
     else arrive();
   });
-  window.addEventListener('blur', rest);
-  window.addEventListener('pagehide', rest);
-  window.addEventListener('resize', () => {
+  on(window, 'blur', rest);
+  on(window, 'pagehide', rest);
+  on(window, 'resize', () => {
     rest();
     measure();
   }, { passive: true });
-  reducedMotion.addEventListener('change', rest);
+  on(reducedMotion, 'change', rest);
+  on(visual, 'holiday:end', () => {
+    expired = true;
+    rest();
+    scene.hidden = true;
+    observer?.disconnect();
+    listeners.abort();
+  }, { once: true });
 })();
