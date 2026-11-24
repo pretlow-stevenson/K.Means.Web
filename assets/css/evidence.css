@@ -7,14 +7,14 @@
   display: none;
 }
 
-.evidence-archive-links {
+.evidence-archive-link {
   margin-top: 24px;
 }
 
-/* Archived bookmarks use native fragment navigation beneath the sticky header. */
+/* Keep native fragment targets clear of the sticky header, including the no-script archive fallback. */
 .evidence-page [id],
-.evidence-archive-links,
-.evidence-archive-links [id] {
+.evidence-archive-link,
+.evidence-archive-link [id] {
   scroll-margin-top: 92px;
 }
 

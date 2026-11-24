@@ -3,10 +3,8 @@
   const pages = Array.from(brief?.querySelectorAll('[data-evidence-page]') || []);
   const navigation = brief?.querySelector('[data-evidence-navigation]');
   const status = brief?.querySelector('[data-evidence-status]');
-
-  if (pages.length < 2 || !navigation || !status) return;
-
-  const links = Array.from(navigation.querySelectorAll('a'));
+  const archive = brief?.querySelector('[data-evidence-archive]');
+  const archiveLink = archive?.querySelector('a');
   const hashTarget = () => {
     try {
       return document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
@@ -14,6 +12,20 @@
       return null;
     }
   };
+
+  const followArchiveBookmark = () => {
+    const target = hashTarget();
+    if (!archiveLink || !target || !archive.contains(target)) return false;
+    // Replace the retired URL so Back does not loop through a redirecting page.
+    window.location.replace(`${archiveLink.href}#${encodeURIComponent(target.id)}`);
+    return true;
+  };
+
+  if (followArchiveBookmark()) return;
+  window.addEventListener('hashchange', followArchiveBookmark);
+  if (pages.length < 2 || !navigation || !status) return;
+
+  const links = Array.from(navigation.querySelectorAll('a'));
 
   const showPage = (page, moveFocus = false, target = null) => {
     pages.forEach((candidate) => { candidate.hidden = candidate !== page; });
