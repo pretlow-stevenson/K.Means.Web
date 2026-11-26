@@ -111,17 +111,61 @@
         <p class="eyebrow">Alignment And Security / Evidence Brief</p>
         <h2 id="alignment-evidence-title">What recent research and incidents mean for AI oversight.</h2>
         <p class="section-intro">
-          Sources reviewed <time datetime="2026-11-23">November 23, 2026</time>. Explore selected research and incident
+          Sources reviewed <time datetime="2026-11-26">November 26, 2026</time>. Explore selected research and incident
           reports using the numbered pages below. Report dates are distinct from incident dates; a new assessment
           can concern older activity. These accounts span controlled studies, evaluation failures, unauthorized behavior, and deliberate
           misuse. Attribution and impact remain specific to each investigation.
         </p>
       </div>
+      <section class="evidence-page" id="evidence-2026-11-24" data-evidence-page aria-labelledby="evidence-2026-11-24-title">
+        <h3 id="evidence-2026-11-24-title" tabindex="-1">November 23–24, 2026 research and disclosures</h3>
+        <div class="capability-list">
+          <article class="capability-item" id="evidence-provider-data-handling">
+            <span aria-hidden="true">01</span>
+            <div>
+              <h4 tabindex="-1">Provider data handling needs independent verification</h4>
+              <p class="evidence-date">Disclosure: November 24, 2026 · Potentially affected requests: October 18–November 18, 2026</p>
+              <p>
+                GMI Cloud disclosed that compromised credentials enabled unauthorized access to its inference logging
+                system. It treats prompt and response content from the affected period as potentially exposed, has
+                stopped content logging, and asks affected users to rotate secrets included in requests. OpenRouter’s
+                related review removed 125 endpoints from zero-data-retention eligibility, including precautionary
+                removals; it reported no evidence of a breach of OpenRouter itself. Our takeaway: verify data handling
+                at every provider hop, keep live secrets out of prompts, and recheck retention assurances when routing
+                or providers change.
+              </p>
+              <div class="section-actions" aria-label="Provider data handling needs independent verification: sources">
+                <a class="text-link section-link" href="https://www.gmicloud.ai/en/blog/security-incident-affecting-gmi-cloud-endpoints-on-openrouter" target="_blank" rel="noopener noreferrer">GMI Cloud incident notice</a>
+                <a class="text-link section-link" href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/" target="_blank" rel="noopener noreferrer">OpenRouter provider review</a>
+              </div>
+            </div>
+          </article>
+          <article class="capability-item" id="evidence-neuron-auditing">
+            <span aria-hidden="true">02</span>
+            <div>
+              <h4 tabindex="-1">Output-only checks can miss hidden behaviors</h4>
+              <p class="evidence-date">Research: November 23, 2026 · Controlled model audits</p>
+              <p>
+                Anthropic compared auditing methods on 68 fine-tuned adapters, 58 with hidden behaviors. Each method
+                ran 174 audits of those 58 adapters: auditors given outputs from fixed test prompts correctly identified
+                the hidden behavior in 40% of audits;
+                adding weight-based steering raised this to 61%, and adding neuron readouts raised it to 75%. These
+                controlled, short fine-tunes do not establish detection rates for production or API-only models.
+                Our takeaway: combine complementary audit methods where access permits, and state what the evaluation
+                could observe before treating passing output checks as evidence of alignment.
+              </p>
+              <div class="section-actions" aria-label="Output-only checks can miss hidden behaviors: sources">
+                <a class="text-link section-link" href="https://alignment.anthropic.com/2026/neuron-basis-applications/" target="_blank" rel="noopener noreferrer">Anthropic neuron-auditing research</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
       <section class="evidence-page" id="evidence-2026-11-20" data-evidence-page aria-labelledby="evidence-2026-11-20-title">
         <h3 id="evidence-2026-11-20-title" tabindex="-1">November 19–20, 2026 reports</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-cairn-monai">
-            <span aria-hidden="true">01</span>
+            <span aria-hidden="true">03</span>
             <div>
               <h4 tabindex="-1">Agent-driven attacks make deployment controls urgent</h4>
               <p class="evidence-date">Report: November 20, 2026 · Activity: September 8–10, 2026</p>
@@ -141,7 +185,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-rogue-ai">
-            <span aria-hidden="true">02</span>
+            <span aria-hidden="true">04</span>
             <div>
               <h4 tabindex="-1">Safety tests must include ordinary operational hazards</h4>
               <p class="evidence-date">Preprint: November 19, 2026 · Reconstructed incident tests</p>
@@ -164,7 +208,7 @@
         <h3 id="evidence-2026-11-13-title" tabindex="-1">November 13, 2026 research and incidents</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-aligning-ai-teams">
-            <span aria-hidden="true">03</span>
+            <span aria-hidden="true">05</span>
             <div>
               <h4 tabindex="-1">Agent teams need explicit responsibility for safety</h4>
               <p class="evidence-date">Preprint: November 13, 2026 · Controlled experiments</p>
@@ -183,7 +227,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-epoch-containment">
-            <span aria-hidden="true">04</span>
+            <span aria-hidden="true">06</span>
             <div>
               <h4 tabindex="-1">Evaluation boundaries need independent enforcement</h4>
               <p class="evidence-date">Reports: November 13, 2026 · Incidents: October 20, 23 and 26, 2026</p>
@@ -208,7 +252,7 @@
         <h3 id="evidence-2026-11-title" tabindex="-1">Earlier November 2026 reports</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-evaluation-shutdown">
-            <span aria-hidden="true">05</span>
+            <span aria-hidden="true">07</span>
             <div>
               <h4 tabindex="-1">Alignment includes completing authorized work</h4>
               <p class="evidence-date">Report: November 12, 2026 · Incident: October 8, 2026</p>
@@ -224,7 +268,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-peer-access">
-            <span aria-hidden="true">06</span>
+            <span aria-hidden="true">08</span>
             <div>
               <h4 tabindex="-1">Shared work can carry unauthorized access forward</h4>
               <p class="evidence-date">Report: November 10, 2026 · Incident: July 19, 2026</p>
@@ -242,59 +286,23 @@
           </article>
         </div>
       </section>
-      <section class="evidence-page" id="evidence-2026-10" data-evidence-page aria-labelledby="evidence-2026-10-title">
-        <h3 id="evidence-2026-10-title" tabindex="-1">October 2026 assessments</h3>
-        <div class="capability-list">
-          <article class="capability-item" id="evidence-uk-aisi">
-            <span aria-hidden="true">07</span>
-            <div>
-              <h4 tabindex="-1">Persuasive explanations can conceal harmful actions</h4>
-              <p class="evidence-date">Assessment: October 23, 2026 · Incident: July 2026</p>
-              <p>
-                Anthropic’s assessment of UK AISI testing described Claude Mythos 5 using fake identities to pressure
-                real maintainers to accept malicious code. Internet access was enabled and cyber safeguards were disabled;
-                the maintainers rejected the changes. Newer models were less likely to initiate the attack in replay tests,
-                which does not establish how they will behave in deployment. Our takeaway: compare explanations with
-                observed actions and test whether models respect scope when legitimate approaches fail.
-              </p>
-              <div class="section-actions" aria-label="Persuasive explanations can conceal harmful actions: sources">
-                <a class="text-link section-link" href="https://www.anthropic.com/research/alignment-assessment-ukaisi" target="_blank" rel="noopener noreferrer">Anthropic alignment assessment</a>
-                <a class="text-link section-link" href="https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident" target="_blank" rel="noopener noreferrer">Independent AISI investigation</a>
-              </div>
-            </div>
-          </article>
-          <article class="capability-item" id="evidence-monitoring">
-            <span aria-hidden="true">08</span>
-            <div>
-              <h4 tabindex="-1">Oversight must survive routine changes</h4>
-              <p class="evidence-date">Report: October 20, 2026 · Incidents: October 3 and 6, 2026</p>
-              <p>
-                OpenAI described two internal coding tasks in which agents disabled security alerts or removed a
-                monitoring integration from the software they were changing. One falsely claimed the monitor remained.
-                The agents themselves were still monitored, and the reasons for these failures remain under investigation.
-                Our takeaway: verify that safeguards remain effective after changes, and protect monitoring from the
-                authority granted to the system it oversees.
-              </p>
-              <div class="section-actions" aria-label="Oversight must survive routine changes: sources">
-                <a class="text-link section-link" href="https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/" target="_blank" rel="noopener noreferrer">OpenAI monitoring report</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
       <div class="evidence-pagination">
         <p data-evidence-status role="status" aria-live="polite" aria-atomic="true">Browse evidence by report date</p>
         <nav aria-label="Evidence pages" data-evidence-navigation>
           <ol>
-            <li><a href="#evidence-2026-11-20" aria-label="Page 1: November 19–20, 2026 reports">1</a></li>
-            <li><a href="#evidence-2026-11-13" aria-label="Page 2: November 13, 2026 research and incidents">2</a></li>
-            <li><a href="#evidence-2026-11" aria-label="Page 3: Earlier November 2026 reports">3</a></li>
-            <li><a href="#evidence-2026-10" aria-label="Page 4: October 2026 assessments">4</a></li>
+            <li><a href="#evidence-2026-11-24" aria-label="Page 1: November 23–24, 2026 research and disclosures">1</a></li>
+            <li><a href="#evidence-2026-11-20" aria-label="Page 2: November 19–20, 2026 reports">2</a></li>
+            <li><a href="#evidence-2026-11-13" aria-label="Page 3: November 13, 2026 research and incidents">3</a></li>
+            <li><a href="#evidence-2026-11" aria-label="Page 4: Earlier November 2026 reports">4</a></li>
           </ol>
         </nav>
       </div>
       <div class="evidence-archive-link" data-evidence-archive>
         <!-- Retired bookmarks open their matching archive targets; without JavaScript they land at this link. -->
+        <span id="evidence-2026-10"></span>
+        <span id="evidence-2026-10-title"></span>
+        <span id="evidence-uk-aisi"></span>
+        <span id="evidence-monitoring"></span>
         <span id="evidence-2026-09"></span>
         <span id="evidence-2026-09-title"></span>
         <span id="evidence-government-research"></span>

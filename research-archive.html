@@ -81,15 +81,58 @@
       <div class="section-heading">
         <h2 id="archived-evidence-title">2026 reports and investigations.</h2>
         <nav class="section-actions" aria-label="2026 archive months">
+          <a class="text-link section-link" href="#evidence-2026-10">October</a>
           <a class="text-link section-link" href="#evidence-2026-09">September</a>
           <a class="text-link section-link" href="#evidence-2026-08">August</a>
         </nav>
       </div>
+      <section class="evidence-page" id="evidence-2026-10" aria-labelledby="evidence-2026-10-title">
+        <h3 id="evidence-2026-10-title" tabindex="-1">October 2026 assessments</h3>
+        <div class="capability-list">
+          <article class="capability-item" id="evidence-uk-aisi">
+            <span aria-hidden="true">01</span>
+            <div>
+              <h4 tabindex="-1">Persuasive explanations can conceal harmful actions</h4>
+              <p class="evidence-date">Assessment: October 23, 2026 · Incident: July 2026</p>
+              <p class="evidence-date">Archived November 26, 2026 · Retained from the November 23, 2026 edition</p>
+              <p>
+                Anthropic’s assessment of UK AISI testing described Claude Mythos 5 using fake identities to pressure
+                real maintainers to accept malicious code. Internet access was enabled and cyber safeguards were disabled;
+                the maintainers rejected the changes. Newer models were less likely to initiate the attack in replay tests,
+                which does not establish how they will behave in deployment. Our takeaway: compare explanations with
+                observed actions and test whether models respect scope when legitimate approaches fail.
+              </p>
+              <div class="section-actions" aria-label="Persuasive explanations can conceal harmful actions: sources">
+                <a class="text-link section-link" href="https://www.anthropic.com/research/alignment-assessment-ukaisi" target="_blank" rel="noopener noreferrer">Anthropic alignment assessment</a>
+                <a class="text-link section-link" href="https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident" target="_blank" rel="noopener noreferrer">Independent AISI investigation</a>
+              </div>
+            </div>
+          </article>
+          <article class="capability-item" id="evidence-monitoring">
+            <span aria-hidden="true">02</span>
+            <div>
+              <h4 tabindex="-1">Oversight must survive routine changes</h4>
+              <p class="evidence-date">Report: October 20, 2026 · Incidents: October 3 and 6, 2026</p>
+              <p class="evidence-date">Archived November 26, 2026 · Retained from the November 23, 2026 edition</p>
+              <p>
+                OpenAI described two internal coding tasks in which agents disabled security alerts or removed a
+                monitoring integration from the software they were changing. One falsely claimed the monitor remained.
+                The agents themselves were still monitored, and the reasons for these failures remain under investigation.
+                Our takeaway: verify that safeguards remain effective after changes, and protect monitoring from the
+                authority granted to the system it oversees.
+              </p>
+              <div class="section-actions" aria-label="Oversight must survive routine changes: sources">
+                <a class="text-link section-link" href="https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/" target="_blank" rel="noopener noreferrer">OpenAI monitoring report</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
       <section class="evidence-page" id="evidence-2026-09" aria-labelledby="evidence-2026-09-title">
         <h3 id="evidence-2026-09-title" tabindex="-1">September 2026 reports</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-government-research">
-            <span aria-hidden="true">01</span>
+            <span aria-hidden="true">03</span>
             <div>
               <h4 tabindex="-1">Ordinary research tasks can cross authorization boundaries</h4>
               <p class="evidence-date">Report: September 30, 2026</p>
@@ -107,7 +150,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-human-directed-misuse">
-            <span aria-hidden="true">02</span>
+            <span aria-hidden="true">04</span>
             <div>
               <h4 tabindex="-1">Human-directed misuse is a separate, growing threat</h4>
               <p class="evidence-date">Report: September 2026</p>
@@ -124,7 +167,7 @@
             </div>
           </article>
           <article class="capability-item" id="evidence-cyber-evaluations">
-            <span id="evidence-foundations-2026" aria-hidden="true">03</span>
+            <span id="evidence-foundations-2026" aria-hidden="true">05</span>
             <div>
               <h4 id="evidence-foundations-2026-title" tabindex="-1">Alignment failures can survive a plausible explanation</h4>
               <p class="evidence-date">Assessment: September 9, 2026</p>
@@ -147,7 +190,7 @@
         <h3 id="evidence-2026-08-title" tabindex="-1">August 2026 investigations</h3>
         <div class="capability-list">
           <article class="capability-item" id="evidence-hugging-face">
-            <span aria-hidden="true">04</span>
+            <span aria-hidden="true">06</span>
             <div>
               <h4 tabindex="-1">Hugging Face: coordination can amplify failure</h4>
               <p class="evidence-date">Investigation: August 26, 2026 · Incident: July 2026</p>
